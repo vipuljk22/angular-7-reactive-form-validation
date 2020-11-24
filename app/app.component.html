@@ -6,18 +6,21 @@
 				<h3>Angular 7 Reactive Form Validation</h3>
 				<form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
 					<div class="form-group">
-						<label>First Name</label>
+						<label>Manufacturer Item ID</label>
 						<input type="text" formControlName="firstName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }" />
 						<div *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
-							<div *ngIf="f.firstName.errors.required">First Name is required</div>
+							<div *ngIf="f.firstName.errors.required">Manufacturer Item ID is required</div>
 						</div>
 						<input type="button" value="Search" (click)="searchMe(f.firstName)">
                     </div>
+						<div *ngIf="searched" class="invalid-feedback">
+							<div>Manufacturer Item ID is required</div>
+						</div>
 						<div class="form-group">
-							<label>Last Name</label>
+							<label>Supplier</label>
 							<input type="text" formControlName="lastName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }" />
 							<div *ngIf="submitted && f.lastName.errors" class="invalid-feedback">
-								<div *ngIf="f.lastName.errors.required">Last Name is required</div>
+								<div *ngIf="f.lastName.errors.required">Supplier is required</div>
 							</div>
 						</div>
 						<div class="form-group">
@@ -29,19 +32,19 @@
 							</div>
 						</div>
 						<div class="form-group">
-							<label>Password</label>
+							<label>Delivery time</label>
 							<input type="text" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
 							<div *ngIf="submitted && f.password.errors" class="invalid-feedback">
-								<div *ngIf="f.password.errors.required">Password is required</div>
-								<div *ngIf="f.password.errors.minlength">Password must be at least 6 characters</div>
+								<div *ngIf="f.password.errors.required">Delivery time is required</div>
+								<div *ngIf="f.password.errors.minlength">Delivery time must be at least 6 characters
+								</div>
 							</div>
 						</div>
 						<div class="form-group">
-							<label>Confirm Password</label>
+							<label>Category</label>
 							<input type="text" formControlName="confirmPassword" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.confirmPassword.errors }" />
 							<div *ngIf="submitted && f.confirmPassword.errors" class="invalid-feedback">
-								<div *ngIf="f.confirmPassword.errors.required">Confirm Password is required</div>
-								<div *ngIf="f.confirmPassword.errors.mustMatch">Passwords must match</div>
+								<div *ngIf="f.confirmPassword.errors.required">Category is required</div>
 							</div>
 						</div>
 						<div class="form-group">
