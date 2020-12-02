@@ -19,6 +19,8 @@ export class AppComponent implements OnInit {
     this.registerForm = this.formBuilder.group(
       {
         firstName: ["", Validators.required],
+        supItemID: ["", Validators.required],
+        application: ["", Validators.required],
         lastName: ["", Validators.required],
         email: ["", [Validators.required, Validators.email]],
         password: ["", [Validators.required, Validators.minLength(6)]],
@@ -50,10 +52,12 @@ export class AppComponent implements OnInit {
     console.log("Searched!", name.value);
     this.registerForm.setValue({
       firstName: name.value,
-      lastName: "Jha",
-      email: "test@gmail.com",
-      password: "test123",
-      confirmPassword: "test123"
+      lastName: "Nypro",
+      supItemID: "12345",
+      application: "CSM",
+      email: "test@abbvie.com",
+      password: "4-6 Weeks",
+      confirmPassword: "Billing"
     });
   }
 }
